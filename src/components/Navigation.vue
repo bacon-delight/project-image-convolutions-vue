@@ -13,7 +13,9 @@
 				<li>Try out multiple filters, multiple times on a sequence</li>
 			</ul>
 			Created by
-			<a class="navigation-container__link" href="https://dipanjande.com"
+			<a
+				class="navigation-container__link"
+				href="https://www.linkedin.com/in/dipanjan131/"
 				>Dipanjan De</a
 			>
 		</div>
