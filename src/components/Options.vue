@@ -113,26 +113,26 @@ export default {
 			});
 	},
 	methods: {
-		async processImage() {
+		processImage() {
 			this.processing = true;
 			this.error = false;
-			await this.processor
-				.process(this.options)
-				.then(() => {
-					this.$store.dispatch(
-						"addLayer",
-						this.processor.getProcessedImage(),
-						{
-							event: true,
-							edit: false,
-						}
-					);
-					this.$emit("toggle");
-				})
-				.catch(() => {
-					this.error = true;
-				});
-			this.processing = false;
+
+			setTimeout(() => {
+				this.processor
+					.process(this.options)
+					.then(() => {
+						this.$store.dispatch("addLayer", {
+							image: this.processor.getProcessedImage(),
+							config: this.options,
+						});
+						this.processing = false;
+						this.$emit("toggle");
+					})
+					.catch(() => {
+						this.error = true;
+						this.processing = false;
+					});
+			}, 200);
 		},
 	},
 };

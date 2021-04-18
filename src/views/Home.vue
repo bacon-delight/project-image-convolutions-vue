@@ -55,6 +55,9 @@ import Options from "@/components/Options.vue";
 
 export default {
 	name: "Landing",
+	metaInfo: {
+		title: "Image Convolutions",
+	},
 	data() {
 		return {
 			configurator: false,

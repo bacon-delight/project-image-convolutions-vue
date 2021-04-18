@@ -38,7 +38,7 @@ export default new Vuex.Store({
 		setImage(context, image) {
 			context.commit("setImage", URL.createObjectURL(image));
 		},
-		addLayer(context, image, config) {
+		addLayer(context, { image, config }) {
 			context.commit("incrementLayers");
 			context.commit("addImage", { image, config });
 		},
